@@ -19,10 +19,11 @@ void * mem_alloc(size_t size);
 ## Implementação
 ### Linear Allocator
 
-Bloco de     [-------------------------------------------------------]
-Memória       *
-              
-* -> endereços de memória retornados ao usuário
+```
+Bloco de      [-------------------------------------------------------]
+Memória
+
+* -> endereços de memória retornados ao usuário 
 ^ -> bytes ocupados
 
 mem_alloc(4)  [-------------------------------------------------------]
@@ -33,3 +34,4 @@ mem_alloc(2)  [-------------------------------------------------------]
 
 mem_alloc(16) [-------------------------------------------------------]
                *   * *               ^    
+```
