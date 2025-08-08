@@ -1,10 +1,10 @@
 # Parte 01
 
-# Alocador de memória
+## Alocador de memória
 
 void * mem_alloc(size_t size);
 
-# Motivação
+## Motivação
 
 * Código mais simples e mais rápido, com menos bugs e menos vulnerabilidades;
 * Alocadores genéricos não tem informações pra otimizar;
@@ -16,7 +16,20 @@ void * mem_alloc(size_t size);
   - Arena
   - Slab
 
-# Implementação
-## Linear Allocator
+## Implementação
+### Linear Allocator
 
-[-------------------------------------------------------]
+Bloco de     [-------------------------------------------------------]
+Memória       *
+              
+* -> endereços de memória retornados ao usuário
+^ -> bytes ocupados
+
+mem_alloc(4)  [-------------------------------------------------------]
+               *   ^ 
+              
+mem_alloc(2)  [-------------------------------------------------------]
+               *   * ^ 
+
+mem_alloc(16) [-------------------------------------------------------]
+               *   * *               ^    
